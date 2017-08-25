@@ -19,7 +19,7 @@ namespace MobileUI.View
 
         private void NewHireList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            DisplayAlert("Message", vm.ItemSelected.description, "OK");
+            DisplayAlert("Message Alert", vm.ItemSelected.description, "OK");
         }
     }
 }
