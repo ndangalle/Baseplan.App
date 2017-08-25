@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileUI.View.ContractsPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Font="20" Text="ABC Construction" TextColor="Blue"/>
+            <ListView x:Name="NewHireList" ItemsSource="{Binding Contracts}" HasUnevenRows="True"  SelectedItem="{Binding ItemSelected}" ItemTapped="NewHireList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30" />
+                                        <RowDefinition Height="40" />
+                                        <RowDefinition Height="40" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView Color="White"
+										Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+
+                                    <Label Text="{Binding rate4Hours}" TextColor="White" BackgroundColor="LightBlue"
+										FontSize="Small" VerticalTextAlignment="Center"
+										Grid.Row="0" Grid.Column="0"/>
+
+                                    <Label Text="{Binding rateDay}" TextColor="White" BackgroundColor="LightBlue"
+										FontSize="Small" VerticalTextAlignment="Center" 
+										Grid.Row="0" Grid.Column="1"/>
+
+                                    <Label Text="{Binding rateWeek}" TextColor="White" BackgroundColor="LightBlue"
+										FontSize="Small" VerticalTextAlignment="Center" 
+										Grid.Row="0" Grid.Column="2"/>
+
+                                    <Label Text="{Binding rateLongTerm}" TextColor="White" BackgroundColor="LightBlue"
+										FontSize="Small" VerticalTextAlignment="Center" 
+										Grid.Row="0" Grid.Column="3"/>
+
+                                    <BoxView Color="#757575" Opacity=".25"
+										Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2" />
+
+                                    <Label Text="{Binding description}" TextColor="Black" 
+										FontSize="Small" VerticalTextAlignment="Center" 
+										Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"/>
+
+                                    <Label Text="{Binding fleetItemModelCode}" TextColor="Black" 
+										FontSize="Small" VerticalTextAlignment="Center" 
+										Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
+                                </Grid>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
